@@ -1,0 +1,20 @@
+{
+	"prettier.enable": true,
+	"eslint.enable": true,
+
+	"editor.defaultFormatter": "eslint",
+
+	"typescript.preferences.preferTypeOnlyAutoImports": true,
+
+	"[javascript]": {
+		"editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "eslint"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.eslint": "always",
+		"source.fixAll.eslint": "always",
+		"source.formatDocument": "always"  
+	}
+}
