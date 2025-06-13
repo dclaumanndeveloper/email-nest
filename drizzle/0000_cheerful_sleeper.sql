@@ -1,29 +1,29 @@
-CREATE TYPE "public"."biography_type" AS ENUM('Biography', 'Release');--> statement-breakpoint
-CREATE TYPE "public"."file_type" AS ENUM('docx', 'PDF');--> statement-breakpoint
+CREATE TYPE "public"."status_change_request" AS ENUM('Pending', 'Concluded');--> statement-breakpoint
 CREATE TYPE "public"."account_type" AS ENUM('savings', 'checking');--> statement-breakpoint
 CREATE TYPE "public"."bank_status" AS ENUM('active', 'inactive');--> statement-breakpoint
-CREATE TYPE "public"."pix_status" AS ENUM('accepted', 'rejected', 'pending');--> statement-breakpoint
-CREATE TYPE "public"."pix_type" AS ENUM('email', 'telephone', 'document', 'random');--> statement-breakpoint
-CREATE TYPE "public"."status_change_request" AS ENUM('Pending', 'Concluded');--> statement-breakpoint
-CREATE TYPE "public"."file_music_type" AS ENUM('Image', 'Audio');--> statement-breakpoint
+CREATE TYPE "public"."biography_type" AS ENUM('Biography', 'Release');--> statement-breakpoint
+CREATE TYPE "public"."content_type" AS ENUM('Audio', 'Video');--> statement-breakpoint
 CREATE TYPE "public"."contract_status" AS ENUM('Pending', 'Concluded', 'Waiting for signature');--> statement-breakpoint
 CREATE TYPE "public"."contract_type" AS ENUM('exclusive', 'unique');--> statement-breakpoint
+CREATE TYPE "public"."file_music_type" AS ENUM('Image', 'Audio');--> statement-breakpoint
+CREATE TYPE "public"."file_type" AS ENUM('docx', 'PDF');--> statement-breakpoint
 CREATE TYPE "public"."image_type" AS ENUM('References', 'Primary Artists', 'Featuring Artists');--> statement-breakpoint
-CREATE TYPE "public"."version" AS ENUM('Studio', 'Live', 'Acoustic', 'Remix', 'Extended Version');--> statement-breakpoint
 CREATE TYPE "public"."invite_status" AS ENUM('pending', 'accepted', 'rejected');--> statement-breakpoint
+CREATE TYPE "public"."is_explicit_enum" AS ENUM('Sim', 'Não', 'Versão Limpa');--> statement-breakpoint
+CREATE TYPE "public"."languages" AS ENUM('Português (Brasil)', 'Afrikaans', 'Alemão', 'Amárico', 'Árabe', 'Armênio', 'Azerbaijano', 'Basco', 'Bengali', 'Búlgaro', 'Cantonês', 'Catalão', 'Coreano', 'Croata', 'Dinamarquês', 'Eslovaco', 'Esloveno', 'Espanhol', 'Espanhol (Espanha)', 'Espanhol (México)', 'Espanhol (Argentina)', 'Espanhol (Colômbia)', 'Espanhol (Chile)', 'Espanhol (Peru)', 'Espanhol (Venezuela)', 'Espanhol (Equador)', 'Espanhol (Cuba)', 'Espanhol (República Dominicana)', 'Espanhol (Panamá)', 'Espanhol (Uruguai)', 'Espanhol (Paraguai)', 'Espanhol (Costa Rica)', 'Espanhol (Bolívia)', 'Espanhol (Honduras)', 'Espanhol (Nicarágua)', 'Espanhol (El Salvador)', 'Espanhol (Guatemala)', 'Espanhol (Puerto Rico)', 'Filipino', 'Finlandês', 'Francês', 'Galego', 'Georgiano', 'Grego', 'Guarani', 'Gujarati', 'Hebraico', 'Hindi', 'Holandês', 'Húngaro', 'Indonésio', 'Inglês', 'Inglês (EUA)', 'Inglês (Reino Unido)', 'Inglês (Austrália)', 'Inglês (Canadá)', 'Inglês (Irlanda)', 'Inglês (Nova Zelândia)', 'Islandês', 'Italiano', 'Japonês', 'Javanês', 'Kannada', 'Khmer Central', 'Lao', 'Latim', 'Letão', 'Lituano', 'Malaiala', 'Malaio', 'Mandarim', 'Marathi', 'Nepalês', 'Norueguês', 'Pig Latin', 'Polonês', 'Português', 'Português (Portugal)', 'Português (Angola)', 'Português (Moçambique)', 'Português (Cabo Verde)', 'Português (Guiné-Bissau)', 'Português (São Tomé e Príncipe)', 'Português (Timor-Leste)', 'Português (Macau)', 'Romeno', 'Russo', 'Sérvio', 'Sinhalês', 'Sueco', 'Sundanês', 'Swahili', 'Taiwan Tradicional', 'Tamil', 'Tcheco', 'Telugu', 'Thai (Tailândia)', 'Turco', 'Ucraniano', 'Urdu', 'Vietnamita', 'Yue', 'Zulu');--> statement-breakpoint
 CREATE TYPE "public"."person_type" AS ENUM('physical', 'legal');--> statement-breakpoint
+CREATE TYPE "public"."pix_status" AS ENUM('accepted', 'rejected', 'pending');--> statement-breakpoint
+CREATE TYPE "public"."pix_type" AS ENUM('email', 'telephone', 'document', 'random');--> statement-breakpoint
+CREATE TYPE "public"."release_format" AS ENUM('Single', 'EP', 'Album');--> statement-breakpoint
+CREATE TYPE "public"."release_status" AS ENUM('pending', 'pending validation', 'validated', 'distribuited', 'blocked', 'correction');--> statement-breakpoint
+CREATE TYPE "public"."role" AS ENUM('owner', 'admin', 'manager', 'editor', 'user');--> statement-breakpoint
 CREATE TYPE "public"."social_type" AS ENUM('CPF', 'Passport', 'CAE', 'IPI', 'CNPJ');--> statement-breakpoint
 CREATE TYPE "public"."songwriter_contract_type" AS ENUM('Exclusive', 'By Work');--> statement-breakpoint
 CREATE TYPE "public"."songwriter_new_music" AS ENUM('Yes', 'No', 'I dont know');--> statement-breakpoint
-CREATE TYPE "public"."content_type" AS ENUM('Audio', 'Video');--> statement-breakpoint
-CREATE TYPE "public"."languages" AS ENUM('Português (Brasil)', 'Afrikaans', 'Alemão', 'Amárico', 'Árabe', 'Armênio', 'Azerbaijano', 'Basco', 'Bengali', 'Búlgaro', 'Cantonês', 'Catalão', 'Coreano', 'Croata', 'Dinamarquês', 'Eslovaco', 'Esloveno', 'Espanhol', 'Espanhol (Espanha)', 'Espanhol (México)', 'Espanhol (Argentina)', 'Espanhol (Colômbia)', 'Espanhol (Chile)', 'Espanhol (Peru)', 'Espanhol (Venezuela)', 'Espanhol (Equador)', 'Espanhol (Cuba)', 'Espanhol (República Dominicana)', 'Espanhol (Panamá)', 'Espanhol (Uruguai)', 'Espanhol (Paraguai)', 'Espanhol (Costa Rica)', 'Espanhol (Bolívia)', 'Espanhol (Honduras)', 'Espanhol (Nicarágua)', 'Espanhol (El Salvador)', 'Espanhol (Guatemala)', 'Espanhol (Puerto Rico)', 'Filipino', 'Finlandês', 'Francês', 'Galego', 'Georgiano', 'Grego', 'Guarani', 'Gujarati', 'Hebraico', 'Hindi', 'Holandês', 'Húngaro', 'Indonésio', 'Inglês', 'Inglês (EUA)', 'Inglês (Reino Unido)', 'Inglês (Austrália)', 'Inglês (Canadá)', 'Inglês (Irlanda)', 'Inglês (Nova Zelândia)', 'Islandês', 'Italiano', 'Japonês', 'Javanês', 'Kannada', 'Khmer Central', 'Lao', 'Latim', 'Letão', 'Lituano', 'Malaiala', 'Malaio', 'Mandarim', 'Marathi', 'Nepalês', 'Norueguês', 'Pig Latin', 'Polonês', 'Português', 'Português (Portugal)', 'Português (Angola)', 'Português (Moçambique)', 'Português (Cabo Verde)', 'Português (Guiné-Bissau)', 'Português (São Tomé e Príncipe)', 'Português (Timor-Leste)', 'Português (Macau)', 'Romeno', 'Russo', 'Sérvio', 'Sinhalês', 'Sueco', 'Sundanês', 'Swahili', 'Taiwan Tradicional', 'Tamil', 'Tcheco', 'Telugu', 'Thai (Tailândia)', 'Turco', 'Ucraniano', 'Urdu', 'Vietnamita', 'Yue', 'Zulu');--> statement-breakpoint
-CREATE TYPE "public"."release_format" AS ENUM('Single', 'EP', 'Album');--> statement-breakpoint
-CREATE TYPE "public"."release_status" AS ENUM('pending', 'pending validation', 'validated', 'distribuited', 'blocked', 'correction');--> statement-breakpoint
 CREATE TYPE "public"."token_type" AS ENUM('Password Recovery', 'Google');--> statement-breakpoint
-CREATE TYPE "public"."is_explicit_enum" AS ENUM('Sim', 'Não', 'Versão Limpa');--> statement-breakpoint
 CREATE TYPE "public"."track_type" AS ENUM('Original', 'Cover', 'Cover by cover artist', 'Medley', 'Karaoke');--> statement-breakpoint
-CREATE TYPE "public"."role" AS ENUM('owner', 'admin', 'manager', 'editor', 'user');--> statement-breakpoint
 CREATE TYPE "public"."user_status" AS ENUM('active', 'inactive', 'deleted', 'waiting');--> statement-breakpoint
+CREATE TYPE "public"."version" AS ENUM('Studio', 'Live', 'Acoustic', 'Remix', 'Extended Version');--> statement-breakpoint
 CREATE TABLE "artists" (
 	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
@@ -353,18 +353,21 @@ CREATE TABLE "tracks_members" (
 	"updated_at" timestamp DEFAULT now()
 );
 --> statement-breakpoint
-ALTER TABLE "sessions" DISABLE ROW LEVEL SECURITY;--> statement-breakpoint
-ALTER TABLE "tasks" DISABLE ROW LEVEL SECURITY;--> statement-breakpoint
-DROP TABLE "sessions" CASCADE;--> statement-breakpoint
-DROP TABLE "tasks" CASCADE;--> statement-breakpoint
-ALTER TABLE "users" ALTER COLUMN "password_hash" DROP NOT NULL;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "created_at" timestamp DEFAULT now() NOT NULL;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "avatar" text DEFAULT 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png';--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "terms_and_privacy" boolean DEFAULT false NOT NULL;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "request_service" boolean DEFAULT false NOT NULL;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "newsletter" boolean DEFAULT false;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "user_status" "user_status" DEFAULT 'waiting' NOT NULL;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "role" "role" DEFAULT 'user' NOT NULL;--> statement-breakpoint
+CREATE TABLE "users" (
+	"id" text PRIMARY KEY NOT NULL,
+	"username" text NOT NULL,
+	"email" text NOT NULL,
+	"password_hash" text,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"avatar" text DEFAULT 'https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png',
+	"terms_and_privacy" boolean DEFAULT false NOT NULL,
+	"request_service" boolean DEFAULT false NOT NULL,
+	"newsletter" boolean DEFAULT false,
+	"user_status" "user_status" DEFAULT 'waiting' NOT NULL,
+	"role" "role" DEFAULT 'user' NOT NULL,
+	CONSTRAINT "users_email_unique" UNIQUE("email")
+);
+--> statement-breakpoint
 ALTER TABLE "artists" ADD CONSTRAINT "artists_org_id_organizations_id_fk" FOREIGN KEY ("org_id") REFERENCES "public"."organizations"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "artists_biographys" ADD CONSTRAINT "artists_biographys_artist_id_artists_id_fk" FOREIGN KEY ("artist_id") REFERENCES "public"."artists"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "artists_members" ADD CONSTRAINT "artists_members_person_id_persons_id_fk" FOREIGN KEY ("person_id") REFERENCES "public"."persons"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
@@ -413,6 +416,4 @@ CREATE INDEX "version_track_idx" ON "tracks" USING btree ("version");--> stateme
 CREATE INDEX "release_track_id_idx" ON "tracks" USING btree ("release_id");--> statement-breakpoint
 CREATE INDEX "is_active_idx" ON "tracks" USING btree ("is_active");--> statement-breakpoint
 CREATE INDEX "id_track_idx" ON "tracks_copyrights" USING btree ("id");--> statement-breakpoint
-CREATE INDEX "track_id_copyrights_idx" ON "tracks_copyrights" USING btree ("tracks_id");--> statement-breakpoint
-ALTER TABLE "users" DROP COLUMN "is_active";--> statement-breakpoint
-DROP TYPE "public"."task_status_enum";
+CREATE INDEX "track_id_copyrights_idx" ON "tracks_copyrights" USING btree ("tracks_id");

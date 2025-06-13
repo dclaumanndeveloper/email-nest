@@ -9,6 +9,7 @@ const envSchema = zod_1.z.object({
     AUTH_SECRET: zod_1.z.string(),
     DATABASE_URL: zod_1.z.string(),
     JWT_SECRET: zod_1.z.string(),
+    RESEND_API_KEY: zod_1.z.string().optional(),
 });
 const _env = envSchema.safeParse(process.env);
 if (_env.success === false) {

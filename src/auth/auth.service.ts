@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {
   BadRequestException,
   Injectable,
@@ -21,7 +22,7 @@ export class AuthService {
   ) {}
 
   async signup(signup: User) {
-    db.query.tracks.findMany({});
+    //db.query.tracks.findMany({});
     const userExists = await db
       .select()
       .from(users)
@@ -56,7 +57,7 @@ export class AuthService {
   async findById(id: string): Promise<User | null> {
     const user = await this.usersService.findById(id);
     if (!user) throw new Error('User not found');
-    if (!user.isActive) throw new Error('User is not active');
+   
     const { ...result } = user;
 
     return result as User;

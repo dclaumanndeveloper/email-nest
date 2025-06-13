@@ -20,10 +20,13 @@ const auth_service_1 = require("./auth.service");
 const userSignin_1 = require("../entity/userSignin");
 const jwt_auth_guard_1 = require("./jwt-auth.guard");
 const ZodValidationPipe_1 = require("../pipes/ZodValidationPipe");
+const send_email_service_1 = require("../send-email/send-email.service");
 let AuthController = class AuthController {
     authService;
-    constructor(authService) {
+    sendEmailService;
+    constructor(authService, sendEmailService) {
         this.authService = authService;
+        this.sendEmailService = sendEmailService;
     }
     async signIn(user) {
         const login = await this.authService.login(user);
@@ -36,7 +39,7 @@ let AuthController = class AuthController {
         const userCreate = {
             username: user.username,
             email: user.email,
-            passwordHash: user.password,
+            passwordHash: user.password
         };
         const createdUser = await this.authService.signup(userCreate);
         return { message: 'Cadastrado com sucesso!', user: createdUser };
@@ -128,6 +131,7 @@ __decorate([
 ], AuthController.prototype, "logout", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
-    __metadata("design:paramtypes", [auth_service_1.AuthService])
+    __metadata("design:paramtypes", [auth_service_1.AuthService,
+        send_email_service_1.SendEmailService])
 ], AuthController);
 //# sourceMappingURL=auth.controller.js.map

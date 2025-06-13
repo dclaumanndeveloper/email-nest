@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
@@ -23,7 +24,7 @@ export class ZodValidationPipe implements PipeTransform {
     } catch (error) {
       console.log({ value });
       throw new BadRequestException(
-        error.errors.map((err) => ({
+        error.errors.map((err: { message: any }) => ({
           message: err.message,
         })),
       );

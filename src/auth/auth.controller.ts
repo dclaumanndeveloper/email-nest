@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+ 
 import {
   Body,
   Controller,
@@ -15,10 +17,16 @@ import { AuthService } from './auth.service';
 import { UserSchemaSignin, type UserSignin } from 'src/entity/userSignin';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { ZodValidationPipe } from 'src/pipes/ZodValidationPipe';
+import { send } from 'process';
+import { SendEmailService } from 'src/send-email/send-email.service';
+import { is } from 'drizzle-orm';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private sendEmailService: SendEmailService,
+  ) {}
 
   @Post('signin')
   @ApiBody({
@@ -69,9 +77,11 @@ export class AuthController {
     const userCreate = {
       username: user.username,
       email: user.email,
-      passwordHash: user.password,
+      passwordHash: user.password
+     
     };
     const createdUser = await this.authService.signup(userCreate);
+    
     return { message: 'Cadastrado com sucesso!', user: createdUser };
   }
 

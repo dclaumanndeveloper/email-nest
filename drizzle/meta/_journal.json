@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1745847140599,
-      "tag": "0000_futuristic_johnny_storm",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1745938833701,
-      "tag": "0001_famous_epoch",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1746450726529,
-      "tag": "0002_sturdy_swordsman",
+      "when": 1749819221189,
+      "tag": "0000_cheerful_sleeper",
       "breakpoints": true
     }
   ]

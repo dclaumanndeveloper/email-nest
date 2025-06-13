@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import 'dotenv/config';
 import { z } from 'zod';
 
@@ -7,6 +8,7 @@ const envSchema = z.object({
   AUTH_SECRET: z.string(),
   DATABASE_URL: z.string(),
   JWT_SECRET: z.string(),
+  RESEND_API_KEY: z.string().optional(),
 });
 
 const _env = envSchema.safeParse(process.env);

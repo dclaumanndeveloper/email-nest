@@ -16,6 +16,8 @@ const passport_1 = require("@nestjs/passport");
 const common_2 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const constants_1 = require("./constants");
+const send_email_service_1 = require("../send-email/send-email.service");
+const send_email_module_1 = require("../send-email/send-email.module");
 let JwtAuthGuard = class JwtAuthGuard extends (0, passport_1.AuthGuard)('jwt') {
 };
 JwtAuthGuard = __decorate([
@@ -29,6 +31,7 @@ exports.AuthModule = AuthModule = __decorate([
         imports: [
             users_module_1.UsersModule,
             passport_1.PassportModule,
+            send_email_module_1.SendEmailModule,
             jwt_1.JwtModule.register({
                 secret: constants_1.jwtConstants.secret,
                 secretOrPrivateKey: constants_1.jwtConstants.secret,
@@ -37,7 +40,13 @@ exports.AuthModule = AuthModule = __decorate([
                 global: true,
             }),
         ],
-        providers: [auth_service_1.AuthService, local_strategy_1.LocalStrategy, jwt_strategy_1.JwtStrategy, JwtAuthGuard],
+        providers: [
+            auth_service_1.AuthService,
+            send_email_service_1.SendEmailService,
+            local_strategy_1.LocalStrategy,
+            jwt_strategy_1.JwtStrategy,
+            JwtAuthGuard,
+        ],
         exports: [auth_service_1.AuthService],
     })
 ], AuthModule);

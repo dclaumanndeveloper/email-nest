@@ -5,4 +5,5 @@ export declare const env: {
     NODE_ENV: "dev" | "test" | "prod";
     PORT: number;
     AUTH_SECRET: string;
+    RESEND_API_KEY?: string | undefined;
 };

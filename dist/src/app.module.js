@@ -9,23 +9,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
-const task_controller_1 = require("./task/task.controller");
 const auth_controller_1 = require("./auth/auth.controller");
-const task_service_1 = require("./task/task.service");
 const auth_service_1 = require("./auth/auth.service");
 const cache_manager_1 = require("@nestjs/cache-manager");
 const auth_module_1 = require("./auth/auth.module");
 const users_module_1 = require("./users/users.module");
 const jwt_1 = require("@nestjs/jwt");
 const users_service_1 = require("./users/users.service");
+const send_email_module_1 = require("./send-email/send-email.module");
+const send_email_service_1 = require("./send-email/send-email.service");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [cache_manager_1.CacheModule.register(), auth_module_1.AuthModule, users_module_1.UsersModule],
-        controllers: [task_controller_1.TaskController, auth_controller_1.AuthController],
-        providers: [app_service_1.AppService, task_service_1.TaskService, auth_service_1.AuthService, users_service_1.UsersService, jwt_1.JwtService],
+        imports: [cache_manager_1.CacheModule.register(), auth_module_1.AuthModule, users_module_1.UsersModule, send_email_module_1.SendEmailModule],
+        controllers: [auth_controller_1.AuthController],
+        providers: [app_service_1.AppService, auth_service_1.AuthService, users_service_1.UsersService, send_email_service_1.SendEmailService, jwt_1.JwtService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

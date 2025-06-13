@@ -4,7 +4,6 @@ export interface User {
     email: string;
     passwordHash: string;
     id?: string;
-    isActive?: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }

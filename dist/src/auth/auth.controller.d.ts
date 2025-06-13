@@ -1,9 +1,11 @@
 import { type UserSignup } from 'src/entity/userSignup';
 import { AuthService } from './auth.service';
 import { type UserSignin } from 'src/entity/userSignin';
+import { SendEmailService } from 'src/send-email/send-email.service';
 export declare class AuthController {
     private authService;
-    constructor(authService: AuthService);
+    private sendEmailService;
+    constructor(authService: AuthService, sendEmailService: SendEmailService);
     signIn(user: UserSignin): Promise<{
         token: any;
         message: string;
@@ -22,7 +24,6 @@ export declare class AuthController {
             email: string;
             passwordHash: string;
             id?: string;
-            isActive?: boolean;
             createdAt?: Date;
             updatedAt?: Date;
         };

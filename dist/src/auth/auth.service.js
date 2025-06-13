@@ -26,7 +26,6 @@ let AuthService = class AuthService {
         this.jwtService = jwtService;
     }
     async signup(signup) {
-        db_1.db.query.tracks.findMany({});
         const userExists = await db_1.db
             .select()
             .from(schema_1.users)
@@ -56,8 +55,6 @@ let AuthService = class AuthService {
         const user = await this.usersService.findById(id);
         if (!user)
             throw new Error('User not found');
-        if (!user.isActive)
-            throw new Error('User is not active');
         const { ...result } = user;
         return result;
     }

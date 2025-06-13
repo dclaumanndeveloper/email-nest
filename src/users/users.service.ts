@@ -9,7 +9,7 @@ export interface User {
   email: string;
   passwordHash: string;
   id?: string;
-  isActive?: boolean;
+  //  isActive?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
