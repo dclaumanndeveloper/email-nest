@@ -1,6 +1,6 @@
-# Projeto NestJS API
+# Envio de Email com NEST
 
-Este projeto é uma API construída com [NestJS](https://nestjs.com/), utilizando TypeScript, Drizzle ORM e integração com Docker.
+Este projeto é uma API construída com [NestJS](https://nestjs.com/), utilizando TypeScript, Drizzle ORM e integração com Docker para envio de e-mails usando o serviço do RESEND.
 
 ## Sumário
 
